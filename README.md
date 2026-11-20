@@ -1,4 +1,4 @@
-# Spinlink – smartlinks for music artists
+# Musiclink – smartlinks for music artists
 Cloudflare Pages (static dashboard + Functions for SEO/OG-rendered public pages & click tracking) + Supabase (Auth, Postgres, Storage).
 
 ## Deploy

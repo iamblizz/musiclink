@@ -25,4 +25,3 @@ if(cd){const t=+cd.dataset.t,u=cd.querySelectorAll('[data-u]'),M=[1e9,24,60,60],
 const k=()=>{const d=t-Date.now();if(d<=0){s&&location.reload();return}u.forEach((e,i)=>e.textContent=String(Math.floor(d/V[i])%M[i]).padStart(2,'0'))};k();setInterval(k,1e3)}
 document.addEventListener('click',e=>{const a=e.target.closest('[data-p],[data-s]');if(!a)return;const p=a.dataset.p||'s:'+a.dataset.s;send('/api/track',{platform:p});window.fbq&&fbq('trackCustom',a.dataset.p?(p.startsWith('ps:')?'PreSaveClick':'StreamClick'):'SocialClick',{platform:p})});
 const f=document.querySelector('.sub');if(f)f.onsubmit=async e=>{e.preventDefault();if(s){const r=await fetch('/api/subscribe',{method:'POST',body:JSON.stringify({slug:s,email:f.querySelector('input').value})});if(!r.ok){f.querySelector('button').textContent='Try again';return}window.fbq&&fbq('track','Lead')}f.innerHTML='<p class="ok">Done. You are on the list for release day.</p>'}})()`;
-
